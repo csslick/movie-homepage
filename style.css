@@ -8,6 +8,10 @@ ul {
   list-style-type: none;
 }
 
+section {
+  padding: 40px 0;
+}
+
 .container {
   min-width: 960px;
   max-width: 1440px;
@@ -30,7 +34,7 @@ header h1 {
 
 header form label {
   display: block;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255,255,255,0.5);
   display: flex;
   padding: 5px 0 5px 1em;
 }
@@ -60,6 +64,7 @@ header form input {
 #main .movie-list > li {
   width: calc((100% - 80px) / 5) ;
   margin-right: 20px;
+  margin-bottom: 2em;
 }
 #main .movie-list > li:nth-child(5n) {
   margin-right: 0;
@@ -78,4 +83,9 @@ transition: 0.5s;
 
 #main .movie-list > li > figure {
   overflow: hidden;
+  margin-bottom: 1em;
+}
+
+#main .movie-list > li h4 {
+  margin-bottom: 5px;
 }
