@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  min-width: 960px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+header {
+  background: #000;
+  color: #fff;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+header h1 {
+  margin-right: auto;
+  font-size: 24px;
+}
+
+header form label {
+  display: block;
+  border: 1px solid #ccc;
+  display: flex;
+  padding: 5px 0 5px 1em;
+}
+
+header form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 0 1em;
+  font-size: 14px;
+}
+
+#main {
+  background: #ccc;
+}
+
+#main h2 {
+  padding: 1em 0;
+  font-size: 30px;
+}
+
+#main .movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+#main .movie-list > li {
+  width: calc((100% - 80px) / 5) ;
+  margin-right: 20px;
+}
+#main .movie-list > li:nth-child(5n) {
+  margin-right: 0;
+}
+
+#main .movie-list > li img {
+width: 100%;
+display: block;
+transition: 0.5s;
+}
+
+#main .movie-list > li img:hover {
+  width: 100%;
+  transform: scale(1.05);
+}
+
+#main .movie-list > li > figure {
+  overflow: hidden;
+}
