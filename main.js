@@ -10,7 +10,7 @@ function getMovies(url) {
       return res.json()
     })
     .then(function(movies) {
-      // 자료(검색 결과)가 없으면
+      // 데이터(검색 결과)가 없으면
       if(movies.results.length === 0) {
         document.querySelector('#main .movie-list').innerHTML = `
           <p>자료가 존재하지 않습니다.</p>
@@ -42,8 +42,10 @@ function showMovies(data) {
           <img src='${IMG_URL + poster}' alt='${title}' />
         </figure>  
         <h4>${title}</h4>
-        <span class='vote'>평점: ${vote_average}</span>
-        <span class='release-date'>개봉일: ${release_date}</span>
+        <div class='info'>
+          <span class='vote'>평점: ${vote_average}</span>
+          <span class='release-date'>개봉일: ${release_date}</span>
+        </div>  
     `
     list.appendChild(html_li);
   })
@@ -62,12 +64,9 @@ searchForm.addEventListener('submit', function(e) {
   console.log(searchValue)
   const searchURL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=${searchValue}`;
 
+  // 검색 데이터가 있으면 조회
   if(searchValue) {
     document.querySelector('#main h2').innerHTML = 'Search Result';
     getMovies(searchURL)
-  } else {
-    document.querySelector('#main .movie-list').innerHTML = `
-      <p>해당하는 자료는 존재하지 않습니다.</p>
-    `
   }
 })

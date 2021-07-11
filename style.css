@@ -99,6 +99,18 @@ transition: 0.5s;
   margin-bottom: 1em;
 }
 
+#main .movie-list .info {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 14px;
+  color: #666;
+}
+
+#main .movie-list .info .vote {
+  margin-right: auto;
+  color: #f30;
+}
+
 #main .movie-list > li h4 {
   margin-bottom: 5px;
 }
