@@ -10,13 +10,21 @@ function getMovies(url) {
       return res.json()
     })
     .then(function(movies) {
+      // 자료(검색 결과)가 없으면
+      if(movies.results.length === 0) {
+        document.querySelector('#main .movie-list').innerHTML = `
+          <p>자료가 존재하지 않습니다.</p>
+        `
+        return
+      }
       showMovies(movies)
     })
 }
 
 function showMovies(data) {
   const movies = data.results;
-  let html_li = '';
+  const list = document.querySelector('#main .movie-list');
+  list.innerHTML = ''; // 출력시 기존 리스트의 내용을 비움
 
   movies.forEach(function(movie){
     const title = movie.original_title;
@@ -26,10 +34,8 @@ function showMovies(data) {
     const release_date = movie.release_date;
     // 이미지 서버 주소
     const IMG_URL = 'https://image.tmdb.org/t/p/w500/'
-
     // li 요소 생성
     const html_li = document.createElement('li')
-    const list = document.querySelector('#main .movie-list');
 
     html_li.innerHTML =  `
         <figure>
@@ -44,3 +50,24 @@ function showMovies(data) {
 }
 
 getMovies(API_URL)
+
+
+
+/*** Part2.검색 ***/
+const searchForm = document.getElementById('searchForm');
+
+searchForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const searchValue = document.getElementById('search').value;
+  console.log(searchValue)
+  const searchURL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=${searchValue}`;
+
+  if(searchValue) {
+    document.querySelector('#main h2').innerHTML = 'Search Result';
+    getMovies(searchURL)
+  } else {
+    document.querySelector('#main .movie-list').innerHTML = `
+      <p>해당하는 자료는 존재하지 않습니다.</p>
+    `
+  }
+})

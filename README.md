@@ -1,5 +1,9 @@
 # movie-homepage
-## DEMO: https://csslick.github.io/movie-homepage/
+## DEMO: https://csslick.github.io/movie-homepage/  
+
+## 주요기능
+1. 최근 인기영화 데이터 불러오기
+2. 영화검색  
 
 ## TMDB API Homepage에서 API키 생성하기(번호 순서대로 경로를 따라가시오)
 0. 홈페이지에서 회원가입
@@ -9,7 +13,11 @@
 3. Introduction에서  ```API link``` 클릭
     https://www.themoviedb.org/settings/api
 4. 설정 정보에서 API 키 및 설정등을 확인
-5. 예제(Discover Examples) https://www.themoviedb.org/documentation/api/discover 에서 사용 API 요청 예시를 참고
+5. 예제(Discover Examples) https://www.themoviedb.org/documentation/api/discover 에서 사용 API 요청 예시를 참고  
 
-## img URL  
+## 기타
+1. img URL  
   https://developers.themoviedb.org/3/getting-started/images
+2. search query
+  https://developers.themoviedb.org/3/getting-started/search-and-query-for-details  
+
